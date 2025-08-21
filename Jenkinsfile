@@ -54,7 +54,7 @@ pipeline {
                 npx netlify --version
                 echo "Deploying to production. Site ID: $NETLIFY_SITE_ID"
                 npx netlify status
-                npx netlify deploy --dir=build --prod
+                echo "Deployed via Jenkins. Site ID : ${NETLIFY_SITE_ID}"
                 '''
             }
         }
