@@ -50,11 +50,11 @@ pipeline {
             }
             steps {
                 sh '''
-                npm install netlify-cli 
-                npx netlify --version
+                npm install -g netlify-cli 
+                netlify --version
                 echo "Deploying to production. Site ID: $NETLIFY_SITE_ID"
-                npx netlify status
-                npx netlify deploy 
+                netlify status
+                netlify deploy --dir=build --prod -m "Deployed via Jenkins" 
                 '''
             }
         }
